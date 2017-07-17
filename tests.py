@@ -1,4 +1,5 @@
 import unittest
+import mock
 import sys
 from pytouch.pytouch import main
 import os
@@ -7,7 +8,7 @@ class TestMainBadArgs(unittest.TestCase):
     """
     Checks the pytouch tool when no extra arguments or too many arguments are passed in.
     """
-    @unittest.mock.patch.object(sys, 'argv', ['pytouch'])
+    @mock.patch.object(sys, 'argv', ['pytouch'])
     def test_not_enough(self):
         """
         Test calling the bare `pytouch` command in the terminal.
@@ -15,7 +16,7 @@ class TestMainBadArgs(unittest.TestCase):
         # A ValuError should have been raised
         self.assertRaises(ValueError, main)
 
-    @unittest.mock.patch.object(sys, 'argv', ['pytouch', 'filename.json', 'filename2.json'])
+    @mock.patch.object(sys, 'argv', ['pytouch', 'filename.json', 'filename2.json'])
     def test_too_many(self):
         """
         Tests calling `pytouch` with filenames specified.
@@ -31,7 +32,7 @@ class TestMainGoodArgs(unittest.TestCase):
     Tests calling the pytouch tool with the right number of arguments provided.
     """
 
-    @unittest.mock.patch.object(sys, 'argv', ['pytouch', 'filename.json'])
+    @mock.patch.object(sys, 'argv', ['pytouch', 'filename.json'])
     def test_too_many(self):
         # Call the main function
         main()
