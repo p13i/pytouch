@@ -13,6 +13,7 @@ setup(
         'mock',
     ],
     version="0.0.1",
+    test_suite='tests',
     entry_points={
         'console_scripts': [
             # We use this line to map our `main()` method in pytouch.py
