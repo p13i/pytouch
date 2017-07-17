@@ -8,6 +8,10 @@ setup(
         # This is the `pytouch` folder that contains __init__.py and pytouch.py
         'pytouch',
     ],
+    install_requires=[
+        # These are pip dependencies we'll require
+        'mock',
+    ],
     version="0.0.1",
     entry_points={
         'console_scripts': [
