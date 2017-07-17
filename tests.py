@@ -1,8 +1,14 @@
+import os
+import sys
+
+# Testing framework libraries
 import unittest
 import mock
-import sys
+
+# The main function we want to test
 from pytouch.pytouch import main
-import os
+
+
 
 class TestMainBadArgs(unittest.TestCase):
     """
