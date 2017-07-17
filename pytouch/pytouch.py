@@ -3,7 +3,7 @@ import sys
 def main():
     # sys.argv[0] is the path to the python interpreter
     # sys.argv[1] should contain the name of the file we want to create
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 2:
         raise ValueError("Please provide the name of the file to create.")
 
     filename = sys.argv[1]
